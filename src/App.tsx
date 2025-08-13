@@ -9,8 +9,6 @@ import DocsLayout from "./pages/DocsLayout";
 import CliDocs from "./pages/CliDocs";
 import AgentApiDocs from "./pages/AgentApiDocs";
 import RegistryApiDocs from "./pages/RegistryApiDocs";
-import Projects from "./pages/Projects";
-import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -22,8 +20,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/admin" element={<Admin />} />
           <Route path="/docs" element={<DocsLayout />}>
             <Route path="cli" element={<CliDocs />} />
             <Route path="agent-api" element={<AgentApiDocs />} />

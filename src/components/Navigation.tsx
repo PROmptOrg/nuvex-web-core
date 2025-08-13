@@ -7,11 +7,9 @@ const Navigation = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
     { href: "/docs/cli", label: "CLI" },
     { href: "/docs/agent-api", label: "Agent API" },
     { href: "/docs/registry-api", label: "Registry API" },
-    { href: "/admin", label: "Admin" },
   ];
 
   return (
