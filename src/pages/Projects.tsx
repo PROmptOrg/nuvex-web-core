@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, ArrowLeft } from "lucide-react";
 import ReviewForm from "@/components/ReviewForm";
+import Navigation from "@/components/Navigation";
 
 interface Project {
   id: string;
@@ -99,8 +101,18 @@ const Projects = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
+      <Navigation />
+      <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <Button variant="ghost" size="sm" asChild>
+            <Link to="/">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
         <h1 className="text-4xl font-bold text-foreground mb-4">
           Projects Built with Nuvex
         </h1>
@@ -195,7 +207,8 @@ const Projects = () => {
           onReviewSubmitted={handleReviewSubmitted}
         />
       )}
-    </div>
+      </div>
+    </>
   );
 };
 
